@@ -21,8 +21,8 @@ body {
     justify-content: center;
 }
 
-.shein-logo {
-    height: 40px;
+.BTT-Logo {
+    height: 100px;
     margin-right: 10px;
 }
 
@@ -153,10 +153,6 @@ footer a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
-}
-
-footer a[href="https://sg.shein.com/"] {
-    text-decoration: underline;
 }
 
 footer img {

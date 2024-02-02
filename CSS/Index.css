@@ -19,11 +19,10 @@
     justify-content: center;
   }
   
-  .BTT-logo {
-    width: 40%;
+  .BTT-Logo {
+    height: 100px;
     margin-right: 10px;
 }
-
   
   nav {
     display: flex;
