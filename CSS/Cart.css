@@ -1,0 +1,299 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #B79D8A;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BTT-Logo {
+    height: 100px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.cart-section {
+    flex: 1.8;
+    text-align: center;
+}
+
+.cart-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item:hover {
+    background-color: #f8f9fa;
+}
+
+.remove-button {
+    background-color: #d63031;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.remove-button:hover {
+    background-color: #b71540;
+}
+
+.cart-item img {
+    max-width: 140px;
+    margin-left: 200px;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px grey solid;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+}
+
+.quantity-box button {
+    color: gray;
+}
+
+.quantity-box {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.remove-button {
+    background-color: grey;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #b71540;
+}
+
+.cart-details {
+    flex: 1;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-total {
+    margin-bottom: 0;
+    align-self:center;
+}
+
+.shipping-form {
+    margin-bottom: 20px;
+    max-width: 400px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+label {
+    flex-basis: 48%;
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.apply-coupon-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.apply-coupon-button:hover {
+    background-color: #2980b9;
+}
+
+.checkout-section {
+    text-align: center;
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+.proceed-to-checkout-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+.proceed-to-checkout-button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #B79D8A;
+    color: #fff;
+    margin-top: auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer img {
+    max-width: 30px;
+    height: auto;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* Media Query for Screens Smaller than 768px */
+@media screen and (max-width: 768px) {
+    .BTT-Logo {
+      height: 30px;
+      margin-right: 5px;
+    }
+  
+    nav a {
+      padding: 5px 10px;
+    }
+  
+    .cart-section {
+      flex: 1;
+    }
+  
+    .cart-item img {
+      max-width: 100%;
+      margin-left: 0;
+      border-radius: 0;
+    }
+  
+    .product-info {
+      flex: 1;
+    }
+  
+    .quantity-controls {
+      gap: 5px;
+    }
+  
+    .cart-details {
+      flex: 1;
+      margin-left: 0;
+    }
+  
+    .shipping-form {
+      max-width: 100%;
+      margin: 0;
+    }
+  
+    label {
+      flex-basis: 100%;
+    }
+  
+    .proceed-to-checkout-button {
+      padding: 10px 20px;
+    }
+  }
+  
+  /* Media Query for Screens Smaller than 480px */
+  @media screen and (max-width: 480px) {
+    .BTT-Logo {
+      height: 25px;
+      margin-right: 0;
+    }
+  
+    nav a {
+      padding: 5px;
+    }
+  
+    .cart-item img {
+      max-width: 100%;
+      margin-left: 0;
+      border-radius: 0;
+    }
+  
+    .quantity-controls {
+      gap: 3px;
+    }
+  
+    .proceed-to-checkout-button {
+      padding: 10px 15px;
+    }
+  }
+  

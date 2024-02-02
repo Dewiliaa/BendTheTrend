@@ -1,0 +1,307 @@
+body, h1, h2, p, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; 
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #B79D8A;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BTT-Logo {
+    height: 100px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex: 1;
+}
+
+.billing-details {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.billing-details h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.billing-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.billing-form input {
+    width: 70%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+}
+
+.product-summary {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 0.5;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-summary h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.product-price {
+    text-align: right;
+    width: 80px;
+}
+
+.cost-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cost-description {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.cost-amount {
+    text-align: right;
+    width: 80px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.payment-options input {
+    display: none;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.payment-options label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.payment-options input:checked + label::before {
+    background-color: #000;
+}
+
+.payment-options label img {
+    max-width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.card-details {
+    display: none;
+}
+
+.payment-options input:not(:checked) + label + .card-details {
+    display: none;
+}
+
+.place-order {
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    margin-top: auto;
+    cursor: pointer;
+    width: calc(100% - 40px);
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.place-order a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.place-order:hover {
+    background-color: #555;
+}
+
+.product-details,
+.cost-details-container,
+.payment-options {
+    margin-bottom: 20px;
+}
+
+.product-details:after,
+.cost-details-container:after,
+.payment-options:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    margin-top: 20px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #B79D8A;
+    color: #fff;
+    margin-top: auto;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+footer img {
+    max-width: 30px;
+    height: auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  
+    .checkout-container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .billing-details {
+      margin-right: 0;
+    }
+  
+    .product-summary {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  
+    .payment-options {
+      margin-top: 20px;
+    }
+  
+    .place-order {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+  
+    .BTT-Logo {
+      height: 30px;
+      margin-right: 5px;
+    }
+  
+    nav a {
+      padding: 5px 10px;
+    }
+  
+    .billing-form input {
+      width: 100%;
+    }
+  
+    .product-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .product-price {
+      text-align: left;
+      margin-top: 5px;
+    }
+  
+    .payment-options label {
+      margin-bottom: 10px;
+    }
+  }
+  

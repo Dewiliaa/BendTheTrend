@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="stylesheet" href="/CSS/Common.css">
+    <link rel="stylesheet" href="/CSS/Cart.css">
+    <script src="/JavaScript/Cart.js"></script>
+    <title>BTT - Cart</title>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+    <img src="/Pictures/Logo1.png" alt="BTT Logo" class="BTT-Logo">
+
+    <nav>
+        <a href="OurStory.html">Our Story</a>
+        <a href="Shop.html" id="shopLink">Shop</a>
+        <a href="#" id="loginLink">Log In</a>
+    </nav>
+</div>
+
+<div class="main-content">
+    <div class="cart-section">
+        <h1 class="cart-title">Shopping Cart</h1>
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="/Pictures/pro1.webp" alt="Product 1">
+                <div class="product-info">
+                    <p class="product-name">Expectations Top</p>
+                    <p class="product-price">$15.99</p>
+                </div>
+                <div class="quantity-controls">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <button class="remove-button">X</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-details">
+        <div class="cart-total">
+            <h2>Cart Total</h2>
+        </div>
+
+        <div class="shipping-form">
+            <h2>Calculate Shipping</h2>
+            <form>
+                <label for="country">Select a Country:</label>
+                <select id="country" onchange="populateCities()">
+                    <option value="select" disabled>Select a Country</option>
+                    <option value="india">India</option>
+                    <option value="china">China</option>
+                    <option value="japan">Japan</option>
+                </select>
+
+                <label for="city">Select a City:</label>
+                <select id="city">
+                    <option value="select" disabled>Select a City</option>
+                </select>
+
+                <label for="postal-code">Postal Code/ZIP:</label>
+                <input type="text" id="postal-code" placeholder="Enter Postal Code">
+
+                <label for="coupon-code">Coupon Code:</label>
+                <input type="text" id="coupon-code" placeholder="Enter Coupon Code">
+
+                <button class="apply-coupon-button">Apply Coupon</button>
+            </form>
+        </div>
+
+        <div class="checkout-section">
+            <hr>
+            <h2>Total</h2>
+            <p>Total: $15.99</p>
+            <button class="proceed-to-checkout-button" onclick="redirectToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="/Pictures/fb.jpg" alt="Facebook Logo"></a>
+    <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="/Pictures/Pinterest.jpg" alt="Pinterest Logo"></a>
+    <a href="https://twitter.com/BTTDesign" target="_blank"><img src="/Pictures/Twitter.jpg" alt="Twitter Logo"></a>
+    <a href="https://www.linkedin.com/company/bendthetrend/about/" target="_blank"><img src="/Pictures/LinkedIn.png" alt="LinkedIn Logo"></a>
+</footer>
+
+</body>
+
+</html>

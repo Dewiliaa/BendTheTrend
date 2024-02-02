@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="stylesheet" href="/CSS/Common.css">
+    <link rel="stylesheet" href="/CSS/Checkout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <script src="/JavaScript/chek.js"></script>
+    <title>BTT - Checkout</title>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+    <img src="/Pictures/Logo1.png" alt="BTT Logo" class="BTT-Logo">
+    <nav>
+        <a href="OurStory.html">Our Story</a>
+        <a href="Shop.html" id="shopLink">Shop</a>
+        <a href="Index.html" id="loginLink">Log In</a>
+    </nav>
+</div>
+
+<div class="checkout-container">
+    <div class="billing-details">
+        <h2>Billing Details</h2>
+        <form class="billing-form">
+            <label for="first-name">First Name*</label>
+            <input type="text" id="first-name" name="first-name" required>
+    
+            <label for="last-name">Last Name*</label>
+            <input type="text" id="last-name" name="last-name" required>
+    
+            <label for="country">Country*</label>
+            <input type="text" name="country" id="country" required>
+    
+            <label for="street-address">Street Address*</label>
+            <input type="text" name="street-address" id="street-address" required>
+    
+            <label for="ZIP">Postal Code / ZIP*</label>
+            <input type="text" name="ZIP" id="ZIP" required>
+    
+            <label for="Town">Town / City*</label>
+            <input type="text" name="Town" id="Town" required>
+    
+            <label for="Phone">Phone*</label>
+            <input type="text" name="Phone" id="Phone" required>
+    
+            <label for="email">E-mail*</label>
+            <input type="text" name="email" id="email" required>
+        </form>
+    </div>
+
+    <div class="product-summary">
+        <h2>Product</h2>
+        
+        <div class="product-details">
+            <div class="product-item">
+                <p class="product-name">Expectations Top</p>
+                <p class="product-price">$15.99</p>
+            </div>
+        </div>
+
+        <div class="cost-details-container">
+            <div class="cost-details">
+                <div class="cost-item subtotal">
+                    <p class="cost-description">Subtotal</p>
+                    <p class="cost-amount">$15.99</p>
+                </div>
+                <div class="cost-item shipping">
+                    <p class="cost-description">Shipping</p>
+                    <p class="cost-amount">$2.00</p>
+                </div>
+                <div class="cost-item total">
+                    <p class="cost-description">Total</p>
+                    <p class="cost-amount">$17.99</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-options">
+            <input type="radio" name="payment" id="direct-bank-transfer" required>
+            <label for="direct-bank-transfer">Direct Bank Transfer</label>
+        
+            <input type="radio" name="payment" id="cash-on-delivery" required>
+            <label for="cash-on-delivery">Cash on Delivery</label>
+        
+            <input type="radio" name="payment" id="paypal" required>
+            <label for="paypal">PayPal <img src="/Pictures/paypal.png" alt="PayPal Logo"></label>
+        
+            <input type="radio" name="payment" id="visa" required>
+            <label for="visa">Visa <img src="/Pictures/visa.png" alt="Visa Logo"></label>
+        
+            <input type="radio" name="payment" id="mastercard" required>
+            <label for="mastercard">Mastercard <img src="/Pictures/mastercard.webp" alt="Mastercard Logo"></label>
+
+            <div class="card-details" id="card-details">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number">
+            </div>
+        </div>
+        <div class="place-order" id="place-order-btn">
+            <a href="Summary.html">Place Order</a>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="/Pictures/fb.jpg" alt="Facebook Logo"></a>
+    <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="/Pictures/Pinterest.jpg" alt="Pinterest Logo"></a>
+    <a href="https://twitter.com/BTTDesign" target="_blank"><img src="/Pictures/Twitter.jpg" alt="Twitter Logo"></a>
+    <a href="https://www.linkedin.com/company/bendthetrend/about/" target="_blank"><img src="/Pictures/LinkedIn.png" alt="LinkedIn Logo"></a>
+</footer>
+
+</body>
+
+</html>
