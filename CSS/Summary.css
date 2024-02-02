@@ -1,0 +1,172 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #B79D8A;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BTT-Logo {
+    height: 100px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.order-details-container,
+.order-summary-container {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.order-details {
+    display: flex;
+}
+
+.left-section,
+.right-section,
+.order-summary {
+    padding: 20px;
+}
+
+h2.section-title {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.right-section {
+    background-color: #f2f2f2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.order-confirmation {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.order-confirmation::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100%;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.order-confirmation img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #B79D8A;
+    color: #fff;
+    margin-top: auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer img {
+    max-width: 30px;
+    height: auto;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+ 
+    .navbar {
+      padding: 10px;
+    }
+  
+    .BTT-Logo {
+      margin-right: 5px;
+    }
+  
+    nav a {
+      padding: 5px 10px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      margin: 10px;
+    }
+  
+    .order-details-container,
+    .order-summary-container {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+  
+    h2.section-title {
+      font-size: 24px;
+    }
+  
+    .order-confirmation {
+      padding: 10px;
+    }
+  
+    .order-confirmation img {
+      max-width: 30px;
+      margin-right: 5px;
+    }
+  }
+  
