@@ -1,0 +1,151 @@
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: black;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BTT-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+section.slideshow {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.mySlides {
+    width: 100%;
+    height: 50vw; /* Adjusted height based on aspect ratio */
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.custom-section {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: 'SF Pro Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-section p {
+    opacity: 0.7;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.custom-section-1 {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.5em;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: 'SF Pro Text', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-section-1 p {
+    opacity: 0.7;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Social Media Icons in the Footer */
+footer img {
+    max-width: 30px;
+    height: auto;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  
+    .navbar {
+      padding: 5px 0;
+    }
+  
+    .shein-logo {
+      height: 30px;
+    }
+  
+    nav a {
+      padding: 5px 10px;
+    }
+  
+    .mySlides {
+      height: 50%;
+    }
+  
+    .custom-section,
+    .custom-section-1 {
+      max-width: 100%;
+      font-size: 1.2em;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  
+    .nav a {
+      padding: 5px;
+    }
+  
+    .mySlides {
+      height: 40%;
+    }
+  
+    .custom-section,
+    .custom-section-1 {
+      font-size: 1em;
+    }
+  }

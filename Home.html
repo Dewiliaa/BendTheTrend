@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B - Your Fashion, Your Rules</title>
+    <link rel="stylesheet" href="/CSS/normalize.css">
+    <link rel="stylesheet" href="/CSS/Common.css">
+    <link rel="stylesheet" href="/CSS/Home.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="/Pictures/logo.png" alt="BTT Logo" class="BTT-Logo">
+        
+        <nav>
+            <a href="Home.html">Our Story</a>
+            <a href="Shop.html" id="shopLink">Shop</a>
+            <a href="Index.html" id="loginLink">Log In</a>
+        </nav>
+    </div>
+
+    <section class="slideshow">
+        <img class="mySlides" src="Pictures/BTT-Banner1.png" alt="Slide 1">
+        <img class="mySlides" src="Pictures/BTT-Banner2.png" alt="Slide 2">
+        <img class="mySlides" src="Pictures/BTT-Banner3.png" alt="Slide 3">
+        <img class="mySlides" src="Pictures/BTT-Banner4.png" alt="Slide 4">
+        <img class="mySlides" src="Pictures/BTT-Banner5.png" alt="Slide 5">
+    </section>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
+    </script>
+
+    <section class="custom-section">
+        <img src="/Pictures/white-logo.png" alt="White Logo" class="white-logo">
+        <p>Shine In, Shine Out</p>
+    </section>
+
+    <section class="custom-section-1">
+        <p>
+            Greetings! Welcome to Bend The Trend, your go-to online destination where we empower individuals to express 
+            their unique style through fashion. At Bend The Trend, we firmly believe that fashion should be enjoyable, 
+            accessible, and affordable for everyone, and we take pride in offering a diverse range of clothing and 
+            accessories at prices that cater to all.
+        </p>
+        <p>
+            We're dedicated to staying ahead of the curve by constantly seeking out the latest trends and regularly 
+            updating our collection with new and exciting styles. No matter your body type or personal taste, 
+            Bend The Trend has a variety of sizes and styles to ensure that everyone can find something they love.
+        </p>
+        <p>
+            Our passion lies in making fashion inclusive and helping everyone feel confident and beautiful in their 
+            own skin. We are committed to providing a positive and enjoyable shopping experience for all our customers.
+        </p>
+        <p>
+            We hope you'll give us a try and see why we're the best place to shop for affordable, on-trend fashion.
+        </p>
+        <p>
+            Love,<br>
+            Bend The Trend xoxo
+        </p>
+    </section>
+
+    <footer>
+        <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="/Pictures/fb.jpg" alt="Facebook Logo"></a>
+        <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="/Pictures/Pinterest.jpg" alt="Pinterest Logo"></a>
+        <a href="https://twitter.com/BTTDesign" target="_blank"><img src="/Pictures/Twitter.jpg" alt="Twitter Logo"></a>
+        <a href="https://www.linkedin.com/company/bendthetrend/about/" target="_blank"><img src="/Pictures/LinkedIn.png" alt="LinkedIn Logo"></a>
+    </footer>
+    
+    </body>
+    
+    </html>
