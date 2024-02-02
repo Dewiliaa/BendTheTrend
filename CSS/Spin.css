@@ -1,15 +1,186 @@
-body {
-    background: #000000;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Rajdhani', sans-serif;
+*{margin: 0; padding: 0;}
+body{
+    background: #eaeaea;
+    font-family: 'Exo 2', sans-serif;
 }
 
-canvas {
+#wrapper{
+margin: 200px auto 0;
+width: 266px;
+position: relative;
+}
+
+#wheel{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 15px solid #243e8e;
+    transform: rotate(0deg);
+}
+
+.arrow{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 34px;
+    background: url(../image/arrow.png);
+    background-size: 100%;
+    left: 46%;
+    z-index: 9;
+    top: -6px;  
+}
+
+#wheel:before{
+    left: -1px;
+    content: '';
+    border: 11px solid rgb(0,0,0 / 80%);
+    width: 231px;
+    height: 231px;
+    border-radius: 50%;
+    z-index: 1000;
+    top: -1px;
+}
+
+#inner-wheel{
+    width: 100%;
+    height: 100%;
+    transition: all 6s cubic-bezier(0,.99,.44,.99);
+}
+
+.prize{
+    margin-top: -100px;
+    color: white;
+    position: relative;
+    z-index: 100000000;
     display: block;
-    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    margin-left: -27px;
+    font-weight: bold;
+    transform: rotateZ('82deg');
+    margin-right: -27px;
+}
+
+#wheel div.sec{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 130px 75px 0;
+    border-color: #19c transparent;
+    transform-origin: 75px 129px;
+    left: 50px;
+    top: -4px;
+    opacity: 1;
+}
+
+#wheel div.sec:nth-child(1){
+    transform: rotate(60deg);
+    border-radius: #8dcfe8 transparent;
+}
+#wheel div.sec:nth-child(2){
+    transform: rotate(120deg);
+    border-radius: #d48039 transparent;
+}
+#wheel div.sec:nth-child(3){
+    transform: rotate(180deg);
+    border-radius: #dfce4b transparent;
+}
+#wheel div.sec:nth-child(4){
+    transform: rotate(240deg);
+    border-radius: #6ddf4a transparent;
+}
+#wheel div.sec:nth-child(5){
+    transform: rotate(300deg);
+    border-radius: #d35400 transparent;
+}
+#wheel div.sec:nth-child(6){
+    transform: rotate(360deg);
+    border-radius: #c0392b transparent;
+}
+
+#spin{
+    width: 68px;
+    height: 68px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin: -34px 0 0 -34px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 0px;
+    z-index: 1000;
+    background: #243e8e;
+    cursor: pointer; 
+    user-select: none;
+}
+
+#spin::after{
+    content: 'SPIN';
+    text-align: center;
+    line-height: 68px;
+    color: #32455b;
+    position: relative;
+    z-index: 100000;
+    width: 68px;
+    height: 68px;
+    display: block;
+}
+
+#inner-spin{
+    width: 54px;
+    height: 54px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -27px 0 0 -27px;
+    border-radius: 50%;
+    background: white;
+    z-index: 999;
+}
+
+.stand {
+    content: '';
+    position: absolute;
+    width: 100px; /* Adjust the width of the stand */
+    height: 200px; /* Adjust the height of the stand */
+    background-color: #964B00; /* Brown color for the stand */
+    border-radius: 10px; /* Rounded corners */
+    left: 50%; /* Center the stand horizontally */
+    bottom: -10px; /* Adjust the distance of the stand from the bottom */
+    transform: translateX(-50%); /* Center the stand horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+    overflow: hidden; /* Hide overflow for the light strips */
+}
+
+/* Add decorative elements */
+.stand::before,
+.stand::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700; /* Yellow color for lights */
+    border-radius: 50%;
+}
+
+.stand::before {
+    left: 0;
+    top: -10px;
+}
+
+.stand::after {
+    right: 0;
+    top: -10px;
+}
+
+/* Add light strips */
+.light-strip {
+    position: absolute;
+    width: 100%;
+    height: 10px; /* Adjust the height of the light strips */
+    background-color: #FFD700; /* Yellow color for lights */
+    top: 50%; /* Center the light strips vertically */
+    transform: translateY(-50%);
 }
