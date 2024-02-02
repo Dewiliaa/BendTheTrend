@@ -1,0 +1,47 @@
+/* Navigation bar styles */
+.navbar {
+    background-color: black;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btt-logo {
+    height: 40px;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Social Media Icons in the Footer */
+footer img {
+    max-width: 30px; /* Adjust as needed */
+    height: auto;
+}
+
+footer p {
+    margin-top: 10px;
+}
