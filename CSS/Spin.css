@@ -7,12 +7,62 @@
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 
 body {
   display: grid;
   place-items: center;
-  overflow: hidden;
+  font-family: "Girassol", sans-serif;
+  
+}
+
+/* Navigation bar styles */
+.navbar {
+  background-color: #B79D8A;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.BTT-Logo {
+  height: 100px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 5px 20px;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #B79D8A;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Social Media Icons in the Footer */
+footer img {
+  max-width: 30px;
+  height: auto;
+}
+
+footer p {
+  margin-top: 10px;
 }
 
 .deal-wheel {

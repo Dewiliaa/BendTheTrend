@@ -6,37 +6,37 @@
  */
   const prizes = [
     {
-      text: "10% Off Sticker Price",
+      text: "10% Off Capped at $10",
       color: "hsl(197 30% 43%)",
       reaction: "dancing"
     },
     { 
-      text: "Free Car",
+      text: "$50 OFF!",
       color: "hsl(173 58% 39%)",
       reaction: "shocked"
     },
     { 
-      text: "No Money Down",
+      text: "Better Luck Next Time!",
       color: "hsl(43 74% 66%)",
       reaction: "shocked" 
     },
     {
-      text: "Half Off Sticker Price",
+      text: "5% Off",
       color: "hsl(27 87% 67%)",
       reaction: "shocked"
     },
     {
-      text: "Free DIY Carwash",
+      text: "$2 Off Shipping",
       color: "hsl(12 76% 61%)",
       reaction: "dancing"
     },
     {
-      text: "Eternal Damnation",
+      text: "Better Luck Next Time!",
       color: "hsl(350 60% 52%)",
       reaction: "laughing"
     },
     {
-      text: "Used Travel Mug",
+      text: "Free Shipping",
       color: "hsl(91 43% 54%)",
       reaction: "laughing"
     },
