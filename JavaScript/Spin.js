@@ -126,6 +126,24 @@
     const selected = Math.floor(rotation / prizeSlice);
     prizeNodes[selected].classList.add(selectedClass);
     reaper.dataset.reaction = prizeNodes[selected].dataset.reaction;
+
+    // Trigger event based on the selected prize
+  const selectedPrize = prizes[selected];
+  if (selectedPrize.text === "10% Off Capped at $10") {
+    alert("Congratulations! Apply the code to your next order and get 10% Off Capped at $10!\nCode: Get10off");
+  } else if (selectedPrize.text === "$50 OFF!") {
+    alert("Jackpot! Apply the code to your next order and get $50 Off!\nCode: OnceInALifeTime");
+  } else if (selectedPrize.text === "Better Luck Next Time!") {
+    alert("Aww Try Again Next Time :>");
+  } else if (selectedPrize.text === "5% Off") {
+    alert("Here you go! Apply the code to your next order and get 5% Off Capped at $5!\nCode: Off5");
+  } else if (selectedPrize.text === "$2 Off Shipping") {
+    alert("Woohoo :> Apply the code to your next order and get $2 off shipping\nCode: 2OffShipping");
+  } else if (selectedPrize.text === "Free Shipping") {
+    alert("Yay to free shipping! Apply the code to your next order and get free shipping\nCode: ShipFree24");
+  } else if (selectedPrize.text === "One Solid Hug") {
+    alert("Aww, Hugs & Kisses");
+  }
 };
   
   trigger.addEventListener("click", () => {
@@ -150,6 +168,6 @@
     selectPrize();
     wheel.classList.remove(spinClass);
     spinner.style.setProperty("--rotate", rotation);
-  });
+});
   
   setupWheel();
