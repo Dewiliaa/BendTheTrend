@@ -12,9 +12,7 @@ body {
 
 body {
   display: grid;
-  place-items: center;
-  font-family: "Girassol", sans-serif;
-  
+  margin: 0;
 }
 
 /* Navigation bar styles */
@@ -65,6 +63,7 @@ footer p {
   margin-top: 10px;
 }
 
+/* Spinning wheel styles */
 .deal-wheel {
   --size: clamp(250px, 80vmin, 700px);
   --lg-hs: 0 3%;
@@ -85,6 +84,7 @@ footer p {
   font-size: calc(var(--size) / 21);
   line-height: 1;
   text-transform: lowercase;
+  margin: 20px auto;
 }
 
 .deal-wheel > * {
