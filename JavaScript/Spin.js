@@ -126,7 +126,7 @@
     const selected = Math.floor(rotation / prizeSlice);
     prizeNodes[selected].classList.add(selectedClass);
     reaper.dataset.reaction = prizeNodes[selected].dataset.reaction;
-  };
+};
   
   trigger.addEventListener("click", () => {
     if (reaper.dataset.reaction !== "resting") {
