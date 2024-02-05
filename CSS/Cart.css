@@ -162,8 +162,8 @@ select {
 }
 
 .apply-coupon-button {
-    background-color: black;
-    color: #fff;
+    background-color: #B79D8A;
+    color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -178,6 +178,7 @@ select {
 
 .checkout-section {
     text-align: center;
+    font-size: larger;
 }
 
 hr {
@@ -185,7 +186,7 @@ hr {
 }
 
 .proceed-to-checkout-button {
-    background-color: black;
+    background-color: #B79D8A;
     color: #fff;
     border: none;
     padding: 15px 30px;
