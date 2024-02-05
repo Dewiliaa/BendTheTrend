@@ -104,6 +104,30 @@ th, td {
     margin-right: 10px;
 }
 
+.spin-direct{
+    position: relative;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+    font-size:larger;
+}
+
+.spin-direct::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100%;
+}
+
+.spin-direct img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
 /* Footer styles */
 footer {
     text-align: center;
