@@ -120,7 +120,7 @@ button {
 }
 
 .add-to-cart {
-    background-color: black;
+    background-color: #B79D8A;
     color: white;
     border: none;
     padding: 10px;
@@ -134,7 +134,7 @@ button {
 }
 
 .quantity-control button {
-    background-color: black;
+    background-color: #B79D8A;
     color: white;
     border: none;
     padding: 5px 10px;
