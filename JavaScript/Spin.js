@@ -61,6 +61,7 @@
   let rotation = 0;
   let currentSlice = 0;
   let prizeNodes;
+  let hasSpun = false;
   
   const createPrizeNodes = () => {
     prizes.forEach(({ text, color, reaction }, i) => {
@@ -142,14 +143,19 @@
   } else if (selectedPrize.text === "Free Shipping") {
     alert("Yay to free shipping! Apply the code to your next order and get free shipping\nCode: ShipFree24");
   } else if (selectedPrize.text === "One Solid Hug") {
-    alert("Aww, Hugs & Kisses");
+    alert("Aww, Hugs & Kisses xoxo");
   }
 };
   
-  trigger.addEventListener("click", () => {
-    if (reaper.dataset.reaction !== "resting") {
-      reaper.dataset.reaction = "resting";
-    }
+trigger.addEventListener("click", () => {
+  if (hasSpun) {
+    // If user has already spun, do nothing
+    return;
+  }
+
+  if (reaper.dataset.reaction !== "resting") {
+    reaper.dataset.reaction = "resting";
+  }
   
     trigger.disabled = true;
     rotation = Math.floor(Math.random() * 360 + spinertia(2000, 5000));
@@ -158,7 +164,10 @@
     spinner.style.setProperty("--rotate", rotation);
     ticker.style.animation = "none";
     runTickerAnimation();
-  });
+  
+
+  hasSpun = true;
+});
   
   spinner.addEventListener("transitionend", () => {
     cancelAnimationFrame(tickerAnim);
