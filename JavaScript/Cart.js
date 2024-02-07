@@ -29,15 +29,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleQuantityChange(event) {
+        console.log('Quantity button clicked'); // Check if the function is triggered
+    
         if (event.target.matches('.quantity-controls button')) {
             const quantitySpan = event.target.parentElement.querySelector('span');
-            const currentQuantity = parseInt(quantitySpan.textContent, 10);
-
+            let currentQuantity = parseInt(quantitySpan.textContent, 10);
+    
             if (event.target.textContent === '+' && currentQuantity < 10) {
-                quantitySpan.textContent = currentQuantity + 1;
+                currentQuantity++; // Increment the current quantity
             } else if (event.target.textContent === '-' && currentQuantity > 1) {
-                quantitySpan.textContent = currentQuantity - 1;
+                currentQuantity--; // Decrement the current quantity
             }
+    
+            quantitySpan.textContent = currentQuantity; // Update the quantity display
+            console.log('Updated quantity:', currentQuantity); // Check the updated quantity
         }
     }
 
