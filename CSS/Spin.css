@@ -8,11 +8,9 @@ html,
 body {
   height: 100%;
   margin: 0;
-}
-
-body {
   display: grid;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Navigation bar styles */
