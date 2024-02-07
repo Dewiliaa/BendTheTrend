@@ -107,6 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function redirectToSummary() {
-        window.location.href = '/HTML/Summary.html';
+        window.location.href = '/HTML/loading.html';
     }
 });
