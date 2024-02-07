@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const clonedProducts = Array.from(originalProducts).map(product => product.cloneNode(true));
 
         const filteredProducts = clonedProducts.filter(product => {
+            const isDefault = selectedCategory === 'Default';
             const isTop = product.querySelector('h3').textContent.includes('Top');
             const isBottom = product.querySelector('h3').textContent.includes('Pants');
 
-            const isDefault = selectedCategory === 'Default';
-            const category = isDefault || (selectedCategory === 'Tops' && isTop) || (selectedCategory === 'Bottoms' && isBottom);
+            const category = isDefault || (!isDefault && ((isTop && selectedCategory === 'Tops') || (isBottom && selectedCategory === 'Bottoms')));
 
             const price = parseFloat(product.querySelector('p').textContent.substring(1));
             const isOnSale = !onSaleChecked || (onSaleChecked && price < 20);
