@@ -104,10 +104,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function redirectToCheckout() {
-        sessionStorage.setItem('selectedCountry', document.getElementById('country').value);
-        sessionStorage.setItem('selectedState', document.getElementById('state').value);
-        sessionStorage.setItem('selectedCity', document.getElementById('city').value);
-        sessionStorage.setItem('postalCode', document.getElementById('postal-code').value);
+        const selectedCountry = document.getElementById('country').value;
+        const selectedState = document.getElementById('state').value;
+        const selectedCity = document.getElementById('city').value; // Ensure this line is present and correct
+        const postalCode = document.getElementById('postal-code').value;
+    
+        console.log("Selected Country:", selectedCountry);
+        console.log("Selected State:", selectedState);
+        console.log("Selected City:", selectedCity); // Ensure this line logs the correct value
+    
+        sessionStorage.setItem('selectedCountry', selectedCountry);
+        sessionStorage.setItem('selectedState', selectedState);
+        sessionStorage.setItem('selectedCity', selectedCity); // Ensure this line is present and correct
+        sessionStorage.setItem('postalCode', postalCode);
     
         window.location.href = "Checkout.html";
     }

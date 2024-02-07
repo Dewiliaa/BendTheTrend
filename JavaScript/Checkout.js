@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedCity = sessionStorage.getItem('selectedCity');
     const selectedState = sessionStorage.getItem('selectedState');
 
+    console.log("Retrieved City:", selectedCity);
     // Pre-fill the corresponding form fields with retrieved values
     const countryInput = document.getElementById('country');
-    const stateInput = document.getElementById('state'); // New line to get state input
+    const stateInput = document.getElementById('state');
     const postalCodeInput = document.getElementById('postal-code');
     const townCityInput = document.getElementById('city');
-     
 
     if (selectedCountry) {
         countryInput.value = selectedCountry;
     }
 
     if (selectedState) {
-        stateInput.value = selectedState; // Populate state input with retrieved value
+        stateInput.value = selectedState;
     }
 
     if (postalCode) {
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (selectedCity) {
         townCityInput.value = selectedCity;  
     }
-
 
     // Get the card details
     const cardDetails = document.getElementById('card-details');
@@ -90,15 +89,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateBillingDetails() {
         // Update billing details section with form values
-        document.getElementById('first-name').textContent = document.getElementById('first-name').value;
-        document.getElementById('last-name').textContent = document.getElementById('last-name').value;
-        document.getElementById('country').textContent = document.getElementById('country').value;
-        document.getElementById('street-address').textContent = document.getElementById('street-address').value;
-        document.getElementById('state').textContent = document.getElementById('state').value;
-        document.getElementById('postal-code').textContent = document.getElementById('postal-code').value;
-        document.getElementById('city').textContent = document.getElementById('city').value;
-        document.getElementById('Phone').textContent = document.getElementById('Phone').value;
-        document.getElementById('email').textContent = document.getElementById('email').value;
+        document.getElementById('first-name').value = document.getElementById('first-name').value;
+        document.getElementById('last-name').value = document.getElementById('last-name').value;
+        document.getElementById('country').value = document.getElementById('country').value;
+        document.getElementById('street-address').value = document.getElementById('street-address').value;
+        document.getElementById('state').value = document.getElementById('state').value;
+        document.getElementById('postal-code').value = document.getElementById('postal-code').value;
+        document.getElementById('city').value = document.getElementById('city').value;
+        document.getElementById('Phone').value = document.getElementById('Phone').value;
+        document.getElementById('email').value = document.getElementById('email').value;
     }
 
     function storeBillingDetails() {
