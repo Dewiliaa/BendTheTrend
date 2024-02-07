@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const plusButton = document.querySelector('.quantity-control button:last-child');
     const addToCartButton = document.querySelector('.add-to-cart');
 
+    // Initial quantity is 1
+    let quantity = 1;
+
     starContainer.addEventListener('click', (event) => {
         const clickedStar = event.target;
 
@@ -14,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Add functionality to plus and minus buttons
-    let quantity = 1;
-
     minusButton.addEventListener('click', () => {
         if (quantity > 1) {
             quantity--;
@@ -35,12 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add functionality to the "Add to Cart" button
     addToCartButton.addEventListener('click', () => {
-        // Call the addToCart function to navigate to the Cart.html page
-        addToCart();
-    });
-
-    // Function to navigate to Cart.html
-    function addToCart() {
+        // Store the selected quantity in sessionStorage
+        sessionStorage.setItem('selectedQuantity', quantity);
+        // Navigate to Cart.html
         window.location.href = "Cart.html";
-    }
+    });
 });

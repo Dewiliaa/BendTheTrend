@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Retrieve the selected quantity from sessionStorage
+    const selectedQuantity = sessionStorage.getItem('selectedQuantity');
+    // Get the quantity span in the cart
+    const quantitySpan = document.querySelector('.cart-item .quantity-controls span');
+    // Update the quantity displayed in the cart
+    if (selectedQuantity && quantitySpan) {
+        quantitySpan.textContent = selectedQuantity;
+    }
+
     const countrySelect = document.getElementById('country');
     let citySelect = document.getElementById('city');
 
@@ -45,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Updated quantity:', currentQuantity); // Check the updated quantity
         }
     }
+    
 
     function handleRemoveButtonClick(event) {
         if (event.target.matches('.remove-button')) {
@@ -56,13 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function redirectToCheckout() {
-        sessionStorage.setItem('selectedCountry', countrySelect.value);
-        sessionStorage.setItem('selectedCity', citySelect.value);
+        sessionStorage.setItem('selectedCountry', document.getElementById('country').value);
+        sessionStorage.setItem('selectedCity', document.getElementById('city').value);
         sessionStorage.setItem('postalCode', document.getElementById('postal-code').value);
-        sessionStorage.setItem('couponCode', document.getElementById('coupon-code').value);
 
         window.location.href = "Checkout.html";
-    }
+}
 
     // Event listeners
     document.getElementById('country').addEventListener('change', populateCities);
