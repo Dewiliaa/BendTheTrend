@@ -1,21 +1,59 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Retrieve the selected quantity from sessionStorage
-    const selectedQuantity = sessionStorage.getItem('selectedQuantity');
-    // Get the quantity span in the cart
-    const quantitySpan = document.querySelector('.cart-item .quantity-controls span');
-    // Update the quantity displayed in the cart
-    if (selectedQuantity && quantitySpan) {
-        quantitySpan.textContent = selectedQuantity;
+    const countrySelect = document.getElementById('country');
+    const stateSelect = document.getElementById('state');
+    const citySelect = document.getElementById('city');
+    const url = 'https://api.countrystatecity.in/v1/countries';
+    const apiKey = 'NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA==';
+
+    function loadCountries() {
+        fetch(url, { headers: { "X-CSCAPI-KEY": apiKey } })
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.iso2;
+                    option.textContent = country.name;
+                    countrySelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error loading countries:', error));
     }
 
-    const countrySelect = document.getElementById('country');
-    let citySelect = document.getElementById('city');
+    function loadStates(countryCode) {
+        stateSelect.disabled = false;
+        stateSelect.innerHTML = '<option value="" disabled>Select a State</option>';
+        citySelect.disabled = true;
+        citySelect.innerHTML = '<option value="" disabled>Select a City</option>';
 
-    const countryCitiesMap = {
-        india: ['Mumbai', 'Delhi', 'Bangalore'],
-        china: ['Beijing', 'Shanghai', 'Guangzhou'],
-        japan: ['Tokyo', 'Osaka', 'Kyoto']
-    };
+        fetch(`${url}/${countryCode}/states`, { headers: { "X-CSCAPI-KEY": apiKey } })
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(state => {
+                    const option = document.createElement('option');
+                    option.value = state.iso2;
+                    option.textContent = state.name;
+                    stateSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error loading states:', error));
+    }
+
+    function loadCities(countryCode, stateCode) {
+        citySelect.disabled = false;
+        citySelect.innerHTML = '<option value="" disabled>Select a City</option>';
+
+        fetch(`${url}/${countryCode}/states/${stateCode}/cities`, { headers: { "X-CSCAPI-KEY": apiKey } })
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city.iso2;
+                    option.textContent = city.name;
+                    citySelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error loading cities:', error));
+    }
 
     function populateCities() {
         citySelect.innerHTML = '<option value="select" disabled>Select a City</option>';
@@ -67,18 +105,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function redirectToCheckout() {
         sessionStorage.setItem('selectedCountry', document.getElementById('country').value);
+        sessionStorage.setItem('selectedState', document.getElementById('state').value);
         sessionStorage.setItem('selectedCity', document.getElementById('city').value);
         sessionStorage.setItem('postalCode', document.getElementById('postal-code').value);
-
+    
         window.location.href = "Checkout.html";
-}
+    }
 
-    // Event listeners
-    document.getElementById('country').addEventListener('change', populateCities);
+    // Load countries when the page loads
+    loadCountries();
+
+    // Event listener for country selection
+    countrySelect.addEventListener('change', function () {
+        const countryCode = this.value;
+        if (countryCode !== 'select') {
+            loadStates(countryCode);
+        }
+    });
+
+    // Event listener for state selection
+    stateSelect.addEventListener('change', function () {
+        const countryCode = countrySelect.value;
+        const stateCode = this.value;
+        if (stateCode !== 'select') {
+            loadCities(countryCode, stateCode);
+        }
+    });
+
+    // Event listeners for quantity change and item removal
     document.addEventListener('click', handleQuantityChange);
     document.addEventListener('click', handleRemoveButtonClick);
 
-    // Additional event listener for the "Proceed to Checkout" button
+    // Event listener for the "Proceed to Checkout" button
     const checkoutButton = document.querySelector('.proceed-to-checkout-button');
     if (checkoutButton) {
         checkoutButton.addEventListener('click', redirectToCheckout);

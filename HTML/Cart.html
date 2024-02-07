@@ -52,15 +52,17 @@
             <h2>Calculate Shipping</h2>
             <form>
                 <label for="country">Select a Country:</label>
-                <select id="country" onchange="populateCities()">
+                <select id="country" class="country">
                     <option value="select" disabled>Select a Country</option>
-                    <option value="india">India</option>
-                    <option value="china">China</option>
-                    <option value="japan">Japan</option>
                 </select>
-
+                
+                <label for="state">Select a State:</label>
+                <select id="state" class="state" disabled>
+                    <option value="select" disabled>Select a State</option>
+                </select>
+                
                 <label for="city">Select a City:</label>
-                <select id="city">
+                <select id="city" class="city" disabled>
                     <option value="select" disabled>Select a City</option>
                 </select>
 

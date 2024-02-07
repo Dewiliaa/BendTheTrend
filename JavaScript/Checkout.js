@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Retrieve stored country, city, and postal code from session storage
+    // Retrieve stored country, city, state, and postal code from session storage
     const selectedCountry = sessionStorage.getItem('selectedCountry');
     const postalCode = sessionStorage.getItem('postalCode');
     const selectedCity = sessionStorage.getItem('selectedCity');
+    const selectedState = sessionStorage.getItem('selectedState');
 
     // Pre-fill the corresponding form fields with retrieved values
     const countryInput = document.getElementById('country');
+    const stateInput = document.getElementById('state'); // New line to get state input
     const postalCodeInput = document.getElementById('postal-code');
     const townCityInput = document.getElementById('city');
+     
 
     if (selectedCountry) {
         countryInput.value = selectedCountry;
+    }
+
+    if (selectedState) {
+        stateInput.value = selectedState; // Populate state input with retrieved value
     }
 
     if (postalCode) {
@@ -18,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (selectedCity) {
-        townCityInput.value = selectedCity;
+        townCityInput.value = selectedCity;  
     }
+
 
     // Get the card details
     const cardDetails = document.getElementById('card-details');
@@ -54,8 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Validate form fields
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
-        const Country = document.getElementById('country').value;
+        const country = document.getElementById('country').value;
         const streetAddress = document.getElementById('street-address').value;
+        const State = document.getElementById('state').value;
         const ZIP = document.getElementById('postal-code').value;
         const town = document.getElementById('city').value;
         const phone = document.getElementById('Phone').value;
@@ -66,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lastName === '' ||
             country === '' ||
             streetAddress === '' ||
+            State === '' ||
             ZIP === '' ||
             town === '' ||
             phone === '' ||
@@ -84,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('last-name').textContent = document.getElementById('last-name').value;
         document.getElementById('country').textContent = document.getElementById('country').value;
         document.getElementById('street-address').textContent = document.getElementById('street-address').value;
+        document.getElementById('state').textContent = document.getElementById('state').value;
         document.getElementById('postal-code').textContent = document.getElementById('postal-code').value;
         document.getElementById('city').textContent = document.getElementById('city').value;
         document.getElementById('Phone').textContent = document.getElementById('Phone').value;
@@ -97,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lastName: document.getElementById('last-name').value,
             country: document.getElementById('country').value,
             streetAddress: document.getElementById('street-address').value,
+            State: document.getElementById('state').value,
             ZIP: document.getElementById('postal-code').value,
             town: document.getElementById('city').value,
             phone: document.getElementById('Phone').value,
