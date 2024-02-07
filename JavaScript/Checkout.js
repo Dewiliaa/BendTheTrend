@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedCity = sessionStorage.getItem('selectedCity');
 
     // Pre-fill the corresponding form fields with retrieved values
-    const countryInput = document.getElementById('country'); // Update ID here
-    const postalCodeInput = document.getElementById('postal-code'); // Update ID here
-    const townCityInput = document.getElementById('city'); // Update ID here
+    const countryInput = document.getElementById('country');
+    const postalCodeInput = document.getElementById('postal-code');
+    const townCityInput = document.getElementById('city');
 
     if (selectedCountry) {
         countryInput.value = selectedCountry;
-        // Optionally, you might want to trigger an event here if populating the city depends on the selected country
     }
 
     if (postalCode) {
@@ -22,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
         townCityInput.value = selectedCity;
     }
 
-    // Get the card details container
+    // Get the card details
     const cardDetails = document.getElementById('card-details');
 
-    // Get the payment options radio buttons
+    // Get the payment options
     const paymentOptions = document.querySelectorAll('input[name="payment"]');
 
-    // Add event listener to each payment option
+    // Event listener to each payment option
     paymentOptions.forEach(function (option) {
         option.addEventListener('change', function () {
             console.log('Payment option changed!');
@@ -42,13 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         if (validateBillingDetails()) {
-            // Update billing details
+            
             updateBillingDetails();
 
-            // Store billing details in local storage
             storeBillingDetails();
 
-            // Redirect to summary page
             redirectToSummary();
         }
     });
@@ -57,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Validate form fields
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
-        const country = document.getElementById('country').value; // Update ID here
+        const Country = document.getElementById('country').value;
         const streetAddress = document.getElementById('street-address').value;
-        const ZIP = document.getElementById('postal-code').value; // Update ID here
-        const town = document.getElementById('city').value; // Update ID here
+        const ZIP = document.getElementById('postal-code').value;
+        const town = document.getElementById('city').value;
         const phone = document.getElementById('Phone').value;
         const email = document.getElementById('email').value;
 
@@ -85,10 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update billing details section with form values
         document.getElementById('first-name').textContent = document.getElementById('first-name').value;
         document.getElementById('last-name').textContent = document.getElementById('last-name').value;
-        document.getElementById('country').textContent = document.getElementById('country').value; // Update ID here
+        document.getElementById('country').textContent = document.getElementById('country').value;
         document.getElementById('street-address').textContent = document.getElementById('street-address').value;
-        document.getElementById('postal-code').textContent = document.getElementById('postal-code').value; // Update ID here
-        document.getElementById('city').textContent = document.getElementById('city').value; // Update ID here
+        document.getElementById('postal-code').textContent = document.getElementById('postal-code').value;
+        document.getElementById('city').textContent = document.getElementById('city').value;
         document.getElementById('Phone').textContent = document.getElementById('Phone').value;
         document.getElementById('email').textContent = document.getElementById('email').value;
     }
@@ -98,10 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const billingDetails = {
             firstName: document.getElementById('first-name').value,
             lastName: document.getElementById('last-name').value,
-            country: document.getElementById('country').value, // Update ID here
+            country: document.getElementById('country').value,
             streetAddress: document.getElementById('street-address').value,
-            ZIP: document.getElementById('postal-code').value, // Update ID here
-            town: document.getElementById('city').value, // Update ID here
+            ZIP: document.getElementById('postal-code').value,
+            town: document.getElementById('city').value,
             phone: document.getElementById('Phone').value,
             email: document.getElementById('email').value
         };
@@ -110,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function redirectToSummary() {
-        // Redirect to summary page
         window.location.href = '/HTML/Summary.html';
     }
 });

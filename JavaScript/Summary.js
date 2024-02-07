@@ -1,17 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Retrieve billingDetails from localStorage
-    var billingDetails = {
-        "ORDER_NUMBER": "12345678",
-        "EMAIL": "lliavirnanda@gmail.com",
-        "PAYMENT_METHOD": "Mastercard xxx456",
-        "ORDER_DATE": "1/12/2023",
-        "DELIVERY_OPTION": "Standard",
-        "DELIVERY_ADDRESS": "BLK 123 Average Home S(123123)",
-        "CONTACT_NUMBER": "88888888"
-    };
-
-    // Save billingDetails to localStorage
-    localStorage.setItem("billingDetails", JSON.stringify(billingDetails));
+    var billingDetails = JSON.parse(localStorage.getItem("billingDetails"));
 
     // Check if billingDetails is not null
     if (billingDetails) {
@@ -22,11 +11,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function updateOrderDetails(billingDetails) {
     // Update HTML elements with order details
-    document.getElementById('order-number').textContent = billingDetails.ORDER_NUMBER;
-    document.getElementById('email').textContent = billingDetails.EMAIL;
-    document.getElementById('payment-method').textContent = billingDetails.PAYMENT_METHOD;
-    document.getElementById('order-date').textContent = billingDetails.ORDER_DATE;
-    document.getElementById('delivery-option').textContent = billingDetails.DELIVERY_OPTION;
-    document.getElementById('delivery-address').innerHTML = billingDetails.DELIVERY_ADDRESS.replace(/\n/g, "<br>");
-    document.getElementById('contact-number').textContent = billingDetails.CONTACT_NUMBER;
+    document.getElementById('order-number').textContent = generateOrderNumber();
+    document.getElementById('email').textContent = billingDetails.email;
+    document.getElementById('payment-method').textContent = billingDetails.paymentMethod || "Mastercard xxx456";
+    document.getElementById('order-date').textContent = getCurrentDate();
+    document.getElementById('delivery-option').textContent = billingDetails.deliveryOption || "Standard";
+
+    // Retrieve delivery address and contact number from billingDetails
+    const streetAddress = `${billingDetails.streetAddress}, ${billingDetails.town}, ${billingDetails.Country}, ${billingDetails.ZIP}`;
+    document.getElementById('street-address').textContent = streetAddress.replace(/, undefined/g, '');
+    document.getElementById('Phone').textContent = billingDetails.phone;
+}
+
+function generateOrderNumber() {
+    return Math.floor(100000 + Math.random() * 900000);
+}
+
+function getCurrentDate() {
+    const date = new Date();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
 }
