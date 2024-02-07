@@ -1,0 +1,35 @@
+*,html{
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.bg-blue{
+    background: #B79D8A;
+}
+
+.animation-center {
+    display: flex;
+    flex-direction: column; /* Change to column */
+    justify-content: flex-start; /* Align items at the start */
+    align-items: center;
+    height: 100vh;
+}
+
+  .logo {
+    width: 500px;
+    height: auto;
+    margin-bottom: 200px;
+    margin-top: 50px;
+  }
+
+.loading-text{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    top: -80px;
+    position: relative;
+    font-style: italic;
+}
