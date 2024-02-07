@@ -7,46 +7,61 @@
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/Common.css">
     <link rel="stylesheet" href="CSS/Index.css">
-    <script src="JavaScript/Index.js"></script>
     <title>BTT - Login</title>
 </head>
 
 <body>
-  <!-- Navigation -->
-  <div class="navbar">
-    <img src="Pictures/logo1.png" alt="BTT Logo" class="BTT-Logo">
-    
-    <nav>
-        <a href="Home.html" id="homeLink">Home</a>
-        <a href="Shop.html" id="shopLink">Shop</a>
-        <a href="#" id="loginLink">Log In</a>
-    </nav>
-</div>
+	<!-- Navigation -->
+	<div class="navbar">
+		<img src="Pictures/logo1.png" alt="BTT Logo" class="BTT-Logo">
+		
+		<nav>
+			<a href="HTML/Home.html" id="homeLink">Home</a>
+			<a href="HTML/Shop.html" id="shopLink">Shop</a>
+			<a href="Index.html" id="loginLink">Log In</a>
+		</nav>
+	</div>
 
-    <div class="login-wrapper">
-        <form id="loginForm" action="" class="form">
-            <h2>Login</h2>
-            <div class="input-group">
-                <input type="text" name="loginUser" id="loginUser" required />
-                <label for="loginUser">User Name</label>
-            </div>
-            <div class="input-group">
-                <input type="password" name="loginPassword" id="loginPassword" required />
-                <label for="loginPassword">Password</label>
-            </div>
-            <input type="submit" value="Login" class="submit-btn" id="loginBtn" />
-            <a href="#forgot-pw">Forgot Password?</a>
-        </form>
+<div class="bg">
+<div class="card">
+<div class="inner-box" id="card">
+	<div class="card-front">
+		<h2>LOGIN</h2>
+		<form id="loginForm">
+			<input type="email" class="input-box" placeholder="Email" required>
+			<input type="password" class="input-box" placeholder="Password" required>
+			<button type="submit" class="submit-btn">Log In</button>
+			<input type="checkbox"><span>Remember Me</span>
+		</form>    
+		<button type="button" class="btn" onclick="openRegister()">I'm New Here!</button>
+		<a href="">Forget Password</a>
+	</div>
+	
+	<div class="card-back">
+		<h2>REGISTER</h2>
+		<form id="registerForm">
+			<input type="text" class="input-box" placeholder="Name" required>
+			<input type="email" class="input-box" placeholder="Email" required>
+			<input type="password" class="input-box" placeholder="Password" required>
+			<button type="submit" class="submit-btn">Create Account</button>
+			<input type="checkbox"><span>Remember Me</span>
+		</form>    
+		<button type="button" class="btn" onclick="openLogin()">I have an account</button>
+		<a href="">Forget Password</a>
+	</div>
+        </div>
+      </div> 
     </div>
-    
-    <!-- Footer -->
+
+	<!-- Footer -->
     <footer>
-    <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="Pictures/FB_logo.png" alt="Facebook Logo"></a>
-    <a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="Pictures/PINTEREST_logo.png" alt="Pinterest Logo"></a>
-    <a href="https://twitter.com/BTTDesign" target="_blank"><img src="Pictures/TWI_logo.png" alt="Twitter Logo"></a>
-    <a href="https://www.linkedin.com/company/bendthetrend/about/" target="_blank"><img src="Pictures/LINKEDIN_LOGO.png" alt="LinkedIn Logo"></a>
-</footer>
+		<a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="Pictures/FB_logo.png" alt="Facebook Logo"></a>
+		<a href="https://www.facebook.com/bendthetrend.lk/" target="_blank"><img src="Pictures/PINTEREST_logo.png" alt="Pinterest Logo"></a>
+		<a href="https://twitter.com/BTTDesign" target="_blank"><img src="Pictures/TWI_logo.png" alt="Twitter Logo"></a>
+		<a href="https://www.linkedin.com/company/bendthetrend/about/" target="_blank"><img src="Pictures/LINKEDIN_LOGO.png" alt="LinkedIn Logo"></a>
+	</footer>
 
+	<script src="JavaScript/Index.js"></script> 
 </body>
-
 </html>
+
