@@ -1,11 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+    // Default amount to convert
+    const defaultAmountToConvert = 17.99;
+
+    // Set the default amount in the display
+    updateTotalInCurrency(defaultAmountToConvert, 'SGD');
+
     // Retrieve stored country, city, state, and postal code from session storage
     const selectedCountry = sessionStorage.getItem('selectedCountry');
     const postalCode = sessionStorage.getItem('postalCode');
     const selectedCity = sessionStorage.getItem('selectedCity');
     const selectedState = sessionStorage.getItem('selectedState');
 
-    console.log("Retrieved City:", selectedCity);
     // Pre-fill the corresponding form fields with retrieved values
     const countryInput = document.getElementById('country');
     const stateInput = document.getElementById('state');
@@ -28,6 +33,20 @@ document.addEventListener('DOMContentLoaded', function () {
         townCityInput.value = selectedCity;  
     }
 
+    // Populate the currency dropdown
+    const currencyDropdown = document.getElementById('convert');
+    try {
+        const currencyList = await fetchCurrencyList(); // Fetch the list of currencies
+        currencyList.forEach(currency => {
+            const option = document.createElement('option');
+            option.value = currency.code;
+            option.textContent = `${currency.name} (${currency.code})`;
+            currencyDropdown.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error fetching currency list:', error);
+    }
+
     // Get the card details
     const cardDetails = document.getElementById('card-details');
 
@@ -37,23 +56,48 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener to each payment option
     paymentOptions.forEach(function (option) {
         option.addEventListener('change', function () {
-            console.log('Payment option changed!');
             // Display card details only if Mastercard or Visa is selected
             cardDetails.style.display = (option.id === 'mastercard' || option.id === 'visa') ? 'block' : 'none';
         });
     });
 
+    // Event listener for currency dropdown change
+    currencyDropdown.addEventListener('change', async function () {
+        const selectedCurrency = currencyDropdown.value;
+        try {
+            // Fetch the conversion rate for the selected currency
+            const conversionRate = await fetchConversionRate('SGD', selectedCurrency);
+            // Calculate the converted amount
+            const convertedAmount = defaultAmountToConvert * conversionRate;
+            // Update the display with the converted amount
+            updateTotalInCurrency(convertedAmount, selectedCurrency);
+        } catch (error) {
+            console.error('Error fetching conversion rate:', error);
+        }
+    });
+
     const placeOrderBtn = document.getElementById('place-order-btn');
-    placeOrderBtn.addEventListener('click', function (event) {
+    placeOrderBtn.addEventListener('click', async function (event) {
         event.preventDefault();
 
         if (validateBillingDetails()) {
-            
             updateBillingDetails();
-
             storeBillingDetails();
 
             redirectToSummary();
+
+            // Convert the total amount to the selected currency
+            const selectedCurrency = document.getElementById('convert').value;
+            try {
+                // Fetch the conversion result
+                const conversionRate = await fetchConversionRate('SGD', selectedCurrency);
+                // Calculate the converted amount
+                const convertedAmount = defaultAmountToConvert * conversionRate;
+                // Update the display with the converted amount
+                updateTotalInCurrency(convertedAmount, selectedCurrency);
+            } catch (error) {
+                console.error('Error fetching currency conversion:', error);
+            }
         }
     });
 
@@ -63,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastName = document.getElementById('last-name').value;
         const country = document.getElementById('country').value;
         const streetAddress = document.getElementById('street-address').value;
-        const State = document.getElementById('state').value;
+        const state = document.getElementById('state').value;
         const ZIP = document.getElementById('postal-code').value;
         const town = document.getElementById('city').value;
         const phone = document.getElementById('Phone').value;
@@ -74,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lastName === '' ||
             country === '' ||
             streetAddress === '' ||
-            State === '' ||
+            state === '' ||
             ZIP === '' ||
             town === '' ||
             phone === '' ||
@@ -107,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lastName: document.getElementById('last-name').value,
             country: document.getElementById('country').value,
             streetAddress: document.getElementById('street-address').value,
-            State: document.getElementById('state').value,
+            state: document.getElementById('state').value,
             ZIP: document.getElementById('postal-code').value,
             town: document.getElementById('city').value,
             phone: document.getElementById('Phone').value,
@@ -115,6 +159,22 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         localStorage.setItem('billingDetails', JSON.stringify(billingDetails));
+    }
+
+    async function fetchCurrencyList() {
+        const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_Vds6Gm6cqg4jKxVxkhhOfg9LGQ8geHfc5u1Zg0CU');
+        const data = await response.json();
+        return Object.keys(data.data).map(code => ({ code, name: '' }));
+    }
+
+    async function fetchConversionRate(fromCurrency, toCurrency) {
+        const response = await fetch(`https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_Vds6Gm6cqg4jKxVxkhhOfg9LGQ8geHfc5u1Zg0CU`);
+        const data = await response.json();
+        return data.data[toCurrency];
+    }
+
+    function updateTotalInCurrency(amount, currency) {
+        document.querySelector('.displaycurrency h3').textContent = `Total in Currency: ${currency} ${amount.toFixed(2)}`;
     }
 
     function redirectToSummary() {

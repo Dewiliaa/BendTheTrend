@@ -1,88 +1,51 @@
-var config = {
-    cUrl: 'https://api.countrystatecity.in/v1/countries',
-    ckey: 'NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA=='
-}
+let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+const fromDropDown = document.getElementById("from-currency-select");
+const toDropDown = document.getElementById("to-currency-select");
 
+//Create dropdown from the currencies array
+currencies.forEach((currency) => {
+  const option = document.createElement("option");
+  option.value = currency;
+  option.text = currency;
+  fromDropDown.add(option);
+});
 
-var countrySelect = document.querySelector('.country'),
-    stateSelect = document.querySelector('.state'),
-    citySelect = document.querySelector('.city')
+//Repeat same thing for the other dropdown
+currencies.forEach((currency) => {
+  const option = document.createElement("option");
+  option.value = currency;
+  option.text = currency;
+  toDropDown.add(option);
+});
 
+//Setting default values
+fromDropDown.value = "USD";
+toDropDown.value = "INR";
 
-function loadCountries() {
+let convertCurrency = () => {
+  //Create References
+  const amount = document.querySelector("#amount").value;
+  const fromCurrency = fromDropDown.value;
+  const toCurrency = toDropDown.value;
 
-    let apiEndPoint = config.cUrl
+  //If amount input field is not empty
+  if (amount.length != 0) {
+    fetch(api)
+      .then((resp) => resp.json())
+      .then((data) => {
+        let fromExchangeRate = data.conversion_rates[fromCurrency];
+        let toExchangeRate = data.conversion_rates[toCurrency];
+        const convertedAmount = (amount / fromExchangeRate) * toExchangeRate;
+        result.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(
+          2
+        )} ${toCurrency}`;
+      });
+  } else {
+    alert("Please fill in the amount");
+  }
+};
 
-    fetch(apiEndPoint, {headers: {"X-CSCAPI-KEY": config.ckey}})
-    .then(Response => Response.json())
-    .then(data => {
-        // console.log(data);
-
-        data.forEach(country => {
-            const option = document.createElement('option')
-            option.value = country.iso2
-            option.textContent = country.name 
-            countrySelect.appendChild(option)
-        })
-    })
-    .catch(error => console.error('Error loading countries:', error))
-
-    stateSelect.disabled = true
-    citySelect.disabled = true
-    stateSelect.style.pointerEvents = 'none'
-    citySelect.style.pointerEvents = 'none'
-}
-
-
-function loadStates() {
-    stateSelect.disabled = false
-    citySelect.disabled = true
-    stateSelect.style.pointerEvents = 'auto'
-    citySelect.style.pointerEvents = 'none'
-
-    const selectedCountryCode = countrySelect.value
-    // console.log(selectedCountryCode);
-    stateSelect.innerHTML = '<option value="">Select State</option>' // for clearing the existing states
-    citySelect.innerHTML = '<option value="">Select City</option>' // Clear existing city options
-
-    fetch(`${config.cUrl}/${selectedCountryCode}/states`, {headers: {"X-CSCAPI-KEY": config.ckey}})
-    .then(response => response.json())
-    .then(data => {
-        // console.log(data);
-
-        data.forEach(state => {
-            const option = document.createElement('option')
-            option.value = state.iso2
-            option.textContent = state.name 
-            stateSelect.appendChild(option)
-        })
-    })
-    .catch(error => console.error('Error loading countries:', error))
-}
-
-
-function loadCities() {
-    citySelect.disabled = false
-    citySelect.style.pointerEvents = 'auto'
-
-    const selectedCountryCode = countrySelect.value
-    const selectedStateCode = stateSelect.value
-    // console.log(selectedCountryCode, selectedStateCode);
-
-    citySelect.innerHTML = '<option value="">Select City</option>' // Clear existing city options
-
-    fetch(`${config.cUrl}/${selectedCountryCode}/states/${selectedStateCode}/cities`, {headers: {"X-CSCAPI-KEY": config.ckey}})
-    .then(response => response.json())
-    .then(data => {
-        // console.log(data);
-
-        data.forEach(city => {
-            const option = document.createElement('option')
-            option.value = city.iso2
-            option.textContent = city.name 
-            citySelect.appendChild(option)
-        })
-    })
-}
-
-window.onload = loadCountries
+document
+  .querySelector("#convert-button")
+  .addEventListener("click", convertCurrency);
+window.addEventListener("load", convertCurrency);
