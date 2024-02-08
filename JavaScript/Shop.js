@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const price = parseFloat(product.querySelector('p').textContent.substring(1));
             const isOnSale = !onSaleChecked || (onSaleChecked && price < 20);
-            const isInStock = !inStockChecked || (inStockChecked && price >= 20 && price <= 40);
+            const isInStock = !inStockChecked || (inStockChecked && price >= 10 && price <= 40);
 
             return category && isOnSale && isInStock;
         });
