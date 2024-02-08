@@ -101,5 +101,6 @@ Bend The Trend is more than simply a project; it represents a shift toward a mor
 ### Acknowledgements
 - I received inspiration for this project from Shein.
 
-### Link to GitHub
-https://github.com/Dewiliaa/BendTheTrend.git
+### Link to GitHub and Google Drive
+- [GitHub](https://github.com/Dewiliaa/BendTheTrend.git)
+- [Google Drive](https://drive.google.com/file/d/1BA16pphS65HHtMuZDclh2NLV0b7f9rpS/view?usp=sharing)
