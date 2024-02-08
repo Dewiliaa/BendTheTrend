@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    function updateQuantityDisplay() {
+        const quantity = sessionStorage.getItem('selectedQuantity');
+        const quantitySpan = document.querySelector('.quantity-controls span');
+        if (quantitySpan) {
+            quantitySpan.textContent = quantity;
+        }
+    }
+    updateQuantityDisplay();
+    
     const countrySelect = document.getElementById('country');
     const stateSelect = document.getElementById('state');
     const citySelect = document.getElementById('city');
