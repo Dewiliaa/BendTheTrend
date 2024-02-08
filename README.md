@@ -1,4 +1,4 @@
-## Welcome to Bend The Trend 🔄
+## :dark_sunglasses: Welcome to Bend The Trend :dark_sunglasses:
 
 **Transforming Secondhand Fashion Shopping!**
 
@@ -86,10 +86,18 @@ Bend The Trend is more than simply a project; it represents a shift toward a mor
     - Users can only play once.
 
 ## Credits
+- [Spin the Wheel](https://codepen.io/piyushpd139/pen/PojmJNp) by Piyush Pandey
+- [Glassmorphism Generator](https://hype4.academy/tools/glassmorphism-generator) by Hype4 Academy
+- [Lottie Animation](https://lottiefiles.com/animations/mobile-payment-mCuHxXCLis) by LottieFiles
+
+### API
+- [Country API](https://countrystatecity.in/docs/) by Country State City
+- [Currency Converter API](https://app.freecurrencyapi.com/dashboard) by FreeCurrencyAPI
 
 ### Media
-- The photos used in this site were obtained from ...
+- The animation, photos, and banners used in this site were obtained from ...
+- [Grim Animation](https://codepen.io/hexagoncircle/pen/vYxKLOa) by Hexagon Circle
+- [Canva](https://www.canva.com/) by Canva
 
 ### Acknowledgements
-
-- I received inspiration for this project from X
+- I received inspiration for this project from Shein.
