@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', async function () {
+
     // Default amount to convert
     const defaultAmountToConvert = 17.99;
 
-    // Set the default amount in the display
+    // Default currency to convert from
     updateTotalInCurrency(defaultAmountToConvert, 'SGD');
 
     // Retrieve stored country, city, state, and postal code from session storage
