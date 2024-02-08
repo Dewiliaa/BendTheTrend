@@ -102,3 +102,4 @@ Bend The Trend is more than simply a project; it represents a shift toward a mor
 - I received inspiration for this project from Shein.
 
 ### Link to GitHub
+https://github.com/Dewiliaa/BendTheTrend.git
