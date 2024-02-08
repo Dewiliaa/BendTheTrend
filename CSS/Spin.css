@@ -130,7 +130,6 @@ footer p {
   height: var(--cap-size);
 }
 
-/* Hide select dropdown from SVG import file */
 .cap select {
   display: none;
 }

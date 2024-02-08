@@ -4,6 +4,8 @@
  * @param color [string] background color of the prize
  * @param reaction ['resting' | 'dancing' | 'laughing' | 'shocked'] Sets the reaper's animated reaction
  */
+
+  // Array for prize and colors
   const prizes = [
     {
       text: "10% Off Capped at $10",
