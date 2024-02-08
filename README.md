@@ -45,19 +45,47 @@ Bend The Trend is more than simply a project; it represents a shift toward a mor
 ## Testing
 
 1. **User Registration**:
-    - Go to the "Sign Up" page.
+    - Users have to log in/register before continuing.
     - Fill out the registration form with valid information.
     - Submit the form and verify that a new account is created successfully.
+
+2. **About Us**:
+    - Users will be directed to a page showing the backstory and goals for Bend The Trend.
+
+3. **Shop**:
+    - Users can sort products based on Tops and Bottoms.
+    - Users can filter products that are on sale.
+    - Users can filter products that are in stock.
     
-2. **Adding Items to the Cart**:
-    - Navigate to a product page.
+4. **Adding Items to the Cart**:
+    - Once users have chosen a product, they will be redirected to the chosen product page.
+    - Users can edit quantity of product.
     - Click on the "Add to Cart" button.
-    - Verify that the item is added to the cart.
+
+5. **Cart**:
+    - Users can edit the quantity of product.
+    - Users to select the country, state, and city along with postal and coupon code (if applicable).
+    - Click on the "Proceed to Checkout" button.
+
+6. **Billing Details**:
+    - The country, state, city, and postal code information have been forwarded.
+    - Users have to fill in the rest of the information.
+    - Users can use the currency converter.
+    - Click on "Place Order" button.
+
+7. **Loading**:
+    - Animation will be played while loading for the payment to go through.
+
+8. **Order Summary**:
+    - The details and order summary of user will be displayed here.
+    - Click on the "Click Here And Play To Get A Code For Your Next Order!" button to play a game.
+
+9. **Spin N Win**:
+    - Click on the "Spin The Wheel" button to start playing.
+    - There will be a pop-up for each result.
+    - Users can only play once.
 
 ## Credits
-
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
 - The photos used in this site were obtained from ...
