@@ -39,7 +39,7 @@ body {
 /*Background styles*/
 .bg{
 	font-family: sans-serif;
-	background-image: url('/Pictures/BTT-Banner1.png');
+	background-image: url('Pictures/BTT-Banner1.png');
 	background-size: cover;
 	background-position: center;
 	color: #495057;
