@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    //To update the quantity saved in sessionStorage
     function updateQuantityDisplay() {
         const quantity = sessionStorage.getItem('selectedQuantity');
         const quantitySpan = document.querySelector('.quantity-controls span');
@@ -9,16 +10,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     updateQuantityDisplay();
     
+    //Dom elements for country, state, city
     const countrySelect = document.getElementById('country');
     const stateSelect = document.getElementById('state');
     const citySelect = document.getElementById('city');
+
+    //URL and API key for fetching the above
     const url = 'https://api.countrystatecity.in/v1/countries';
     const apiKey = 'NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA==';
 
+    //Function to load countries from API
     function loadCountries() {
         fetch(url, { headers: { "X-CSCAPI-KEY": apiKey } })
             .then(response => response.json())
             .then(data => {
+                //loop through the data
                 data.forEach(country => {
                     const option = document.createElement('option');
                     option.value = country.iso2;
@@ -29,15 +35,18 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error loading countries:', error));
     }
 
+    //Function to load states based on country selected
     function loadStates(countryCode) {
         stateSelect.disabled = false;
         stateSelect.innerHTML = '<option value="" disabled>Select a State</option>';
         citySelect.disabled = true;
         citySelect.innerHTML = '<option value="" disabled>Select a City</option>';
 
+        //Fetch data
         fetch(`${url}/${countryCode}/states`, { headers: { "X-CSCAPI-KEY": apiKey } })
             .then(response => response.json())
             .then(data => {
+                //Loop through
                 data.forEach(state => {
                     const option = document.createElement('option');
                     option.value = state.iso2;
@@ -48,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => console.error('Error loading states:', error));
     }
 
+    //Function to load cities based on the selected country and state
     function loadCities(countryCode, stateCode) {
         citySelect.disabled = false;
         citySelect.innerHTML = '<option value="" disabled>Select a City</option>';
@@ -85,9 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
         return option;
     }
 
+    //Function to handle quantity change
     function handleQuantityChange(event) {
-        console.log('Quantity button clicked'); // Check if the function is triggered
-    
+        console.log('Quantity button clicked');
+        //Check if quantity button is clicked
         if (event.target.matches('.quantity-controls button')) {
             const quantitySpan = event.target.parentElement.querySelector('span');
             let currentQuantity = parseInt(quantitySpan.textContent, 10);
@@ -107,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-
+    //Function to handle item removal from the cart
     function handleRemoveButtonClick(event) {
         if (event.target.matches('.remove-button')) {
             const cartItem = event.target.closest('.cart-item');
@@ -119,19 +130,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    //Function to redirect to checkout page
     function redirectToCheckout() {
         const selectedCountry = document.getElementById('country').value;
         const selectedState = document.getElementById('state').value;
-        const selectedCity = document.getElementById('city').value; // Ensure this line is present and correct
+        const selectedCity = document.getElementById('city').value;
         const postalCode = document.getElementById('postal-code').value;
     
+        // Ensure value is correct - just to check
         console.log("Selected Country:", selectedCountry);
         console.log("Selected State:", selectedState);
-        console.log("Selected City:", selectedCity); // Ensure this line logs the correct value
+        console.log("Selected City:", selectedCity); 
     
+        //Store information to sessionStorage
         sessionStorage.setItem('selectedCountry', selectedCountry);
         sessionStorage.setItem('selectedState', selectedState);
-        sessionStorage.setItem('selectedCity', selectedCity); // Ensure this line is present and correct
+        sessionStorage.setItem('selectedCity', selectedCity); 
         sessionStorage.setItem('postalCode', postalCode);
     
         window.location.href = "Checkout.html";
