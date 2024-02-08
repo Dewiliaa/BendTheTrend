@@ -1,7 +1,7 @@
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh; /* Set minimum height to the viewport height */
+	min-height: 100vh;
 	margin: 0;
 	font-family: "Poppins", sans-serif;
   }
@@ -11,8 +11,6 @@ body {
     padding: 0;
     box-sizing: border-box;
   }
-
-  
 
 	/* Navigation bar styles */
 	.navbar {
@@ -38,6 +36,7 @@ body {
 		padding: 5px 20px;
 	  }
 
+/*Background styles*/
 .bg{
 	font-family: sans-serif;
 	background-image: url('/Pictures/BTT-Banner1.png');
@@ -49,6 +48,8 @@ body {
 	justify-content: center;
 	flex: 1;
 }
+
+/*Card styles*/
 .card{
 	margin-top: 70px;
 	margin-bottom: 70px;
@@ -57,8 +58,8 @@ body {
 	box-shadow: 0.15s ease-in-out;
     perspective: 1000px;
 	border-radius: 10px;
-	
 }
+
 .inner-box{
 	position: relative;
 	width: 100%;
@@ -66,6 +67,7 @@ body {
 	transform-style: preserve-3d;
     transition: transform 1s;
 }
+
 .card-front, .card-back{
 	position: absolute;
     width: 100%;
@@ -80,9 +82,11 @@ body {
     backface-visibility: hidden;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 .card-back{
 	transform: rotateY(180deg);
 }
+
 .card h2{
 	font-weight: normal;
 	font-size: 24px;
@@ -90,6 +94,7 @@ body {
 	margin-bottom: 20px;
 	color: #400023;
 }
+
 .input-box{
 	width: 100%;
 	background: transparent;
@@ -103,10 +108,12 @@ body {
 	text-align: center;
 	color: #000;
 }
+
 ::placeholder{
 	color: 100%;
 	font-size: 15px;
 }
+
 button{
 	width: 100%;
 	background: transparent;
@@ -121,6 +128,7 @@ button{
 	color: #000;
 	cursor: pointer;
 }
+
 .submit-btn{
 	position: relative;
 }
@@ -129,9 +137,11 @@ span{
 	font-size: 13px;
 	margin-left: 10px;
 }
+
 .card .btn{
 	margin-top: 40px;
 }
+
 .card a{
 	color: #fff;
 	text-decoration: none;
@@ -167,6 +177,7 @@ span{
     margin-top: 10px;
   }
   
+  /*Media query for smaller screen*/
   @media screen and (max-width: 768px) {
     body {
       background-color: #f0f0f0;

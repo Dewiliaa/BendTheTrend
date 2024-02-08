@@ -1,13 +1,18 @@
-var card=document.getElementById("card");         
+var card=document.getElementById("card");    
+
+// Function to open register form
 function openRegister()
      {
      card.style.transform = "rotateY(-180deg)";	
      }	
+
+// Function to open login form
 function openLogin()
      {
          card.style.transform = "rotateY(0deg)";	
      }	
 
+     // Event listeners
      document.addEventListener("DOMContentLoaded", function() {
           var loginForm = document.getElementById("loginForm");
           var registerForm = document.getElementById("registerForm");
