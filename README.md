@@ -14,11 +14,9 @@ Bend The Trend is more than simply a project; it represents a shift toward a mor
 
 🎉 **Spin The Wheel!**: Take a chance with our Spin The Wheel section! Win exciting discounts or even snag a free item with every spin.
 
-[Viw Wireframe]
-> [!Desktop Version]
-> https://www.figma.com/file/Zy8MTiPYC3Ztp4g8t8yHSZ/Dewi-%26-Joey---BTT-Desktop?type=design&node-id=4%3A116&mode=design&t=1Y60LSQxLKZAgBFb-1
-> [!Mobile Version]
-> https://www.figma.com/file/8sjzCDfuGVr7uepfeqeW85/Dewi-%26-Joey---BTT-Mobile?type=design&node-id=0%3A1
+### View Wireframes:
+- [Desktop Version](https://www.figma.com/file/Zy8MTiPYC3Ztp4g8t8yHSZ/Dewi-%26-Joey---BTT-Desktop?type=design&node-id=4%3A116&mode=design&t=1Y60LSQxLKZAgBFb-1)
+- [Mobile Version](https://www.figma.com/file/8sjzCDfuGVr7uepfeqeW85/Dewi-%26-Joey---BTT-Mobile?type=design&node-id=0%3A1)
 
 ## Features
  <!-- Different parts and features of this project-->
