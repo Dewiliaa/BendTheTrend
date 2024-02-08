@@ -25,10 +25,13 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 - **Product Catalog**: Displays a wide range of clothing items with detailed descriptions and images.
 - **Shopping Cart**: Enables users to add items to their cart and proceed to checkout seamlessly.
 - **Currency Converter**: Allows users to view prices in their preferred currency for a convenient shopping experience.
+- **Responsive Design**: The website is fully responsive, ensuring optimal viewing experience across all devices.
+- **Social Media Integration**: Share your favorite finds on social media platforms directly from the website.
 
 ### Features Left to Implement
 - **Wishlist**: Allows users to save items for later and receive notifications for price drops.
 - **Style Recommendations**: Provides personalized recommendations based on user preferences and browsing history.
+- **Customizable Profiles**: Users can personalize their profiles with style preferences, sizes, and favorite brands.
 
 ## Technologies Used
 
