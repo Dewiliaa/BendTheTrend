@@ -95,7 +95,6 @@ Bend The Trend is more than simply a project; it represents a shift toward a mor
 - [Currency Converter API](https://app.freecurrencyapi.com/dashboard) by FreeCurrencyAPI
 
 ### Media
-- The animation, photos, and banners used in this site were obtained from ...
 - [Grim Animation](https://codepen.io/hexagoncircle/pen/vYxKLOa) by Hexagon Circle
 - [Canva](https://www.canva.com/) by Canva
 
