@@ -91,11 +91,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (event.target.matches('.quantity-controls button')) {
             const quantitySpan = event.target.parentElement.querySelector('span');
             let currentQuantity = parseInt(quantitySpan.textContent, 10);
-    
+        
             if (event.target.textContent === '+' && currentQuantity < 10) {
                 currentQuantity++; // Increment the current quantity
+                let total = currentQuantity * 15.99
+                document.getElementById("total").innerHTML = "Total: $" + total
             } else if (event.target.textContent === '-' && currentQuantity > 1) {
                 currentQuantity--; // Decrement the current quantity
+                let total = currentQuantity * 15.99
+                document.getElementById("total").innerHTML = "Total: $" + total
             }
     
             quantitySpan.textContent = currentQuantity; // Update the quantity display
@@ -109,6 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const cartItem = event.target.closest('.cart-item');
             if (cartItem) {
                 cartItem.remove();
+                let total = 0
+                document.getElementById("total").innerHTML = "Total: $" + total
             }
         }
     }
