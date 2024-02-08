@@ -1,2 +1,64 @@
-# BendTheTrend
-FED Assignment 2
+## Welcome to Bend The Trend 🔄
+
+**Transforming Secondhand Fashion Shopping!**
+
+Bend The Trend is more than simply a project; it represents a shift toward a more sustainable and fashionable future for online fashion sales. Inspired by SHEIN's clean overhaul, we are transforming the vintage apparel purchasing experience.
+ 
+## Why Choose Bend The Trend?
+
+🌟 **Cutting-edge Technology**: Our platform is powered by the latest tech innovations to ensure a seamless and enjoyable shopping experience.
+
+🌍 **Sustainability at its Core**: We're committed to reducing fashion waste by offering a wide range of eco-friendly secondhand apparel options.
+
+🤝 **Inclusivity**: Everyone deserves access to fashionable and affordable clothing. Our platform caters to users of all styles, sizes, and preferences.
+
+🎉 **Spin The Wheel!**: Take a chance with our Spin The Wheel section! Win exciting discounts or even snag a free item with every spin.
+
+This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
+These files should themselves either be included as a pdf file in the project itself (in an separate directory)
+Include the Adobe XD wireframe as a folder. You can include the XD share url. 
+
+## Features
+ <!-- Different parts and features of this project-->
+### Existing Features
+- **User Authentication**: Allows users to create accounts and log in to access personalized features.
+- **Product Catalog**: Displays a wide range of clothing items with detailed descriptions and images.
+- **Shopping Cart**: Enables users to add items to their cart and proceed to checkout seamlessly.
+- **Currency Converter**: Allows users to view prices in their preferred currency for a convenient shopping experience.
+
+### Features Left to Implement
+- **Wishlist**: Allows users to save items for later and receive notifications for price drops.
+- **Style Recommendations**: Provides personalized recommendations based on user preferences and browsing history.
+
+## Technologies Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - Used for structuring the website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Used for styling and layout.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Used for interactivity and dynamic content.
+- [Bootstrap](https://getbootstrap.com) - Used for responsive design and pre-built components.
+- [jQuery](https://jquery.com) - Used for DOM manipulation and event handling.
+
+
+## Testing
+
+1. **User Registration**:
+    - Go to the "Sign Up" page.
+    - Fill out the registration form with valid information.
+    - Submit the form and verify that a new account is created successfully.
+    
+2. **Adding Items to the Cart**:
+    - Navigate to a product page.
+    - Click on the "Add to Cart" button.
+    - Verify that the item is added to the cart.
+
+## Credits
+
+### Content
+- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+
+### Media
+- The photos used in this site were obtained from ...
+
+### Acknowledgements
+
+- I received inspiration for this project from X
